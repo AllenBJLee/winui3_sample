@@ -35,7 +35,7 @@ namespace winrt::ModalDialog::implementation
 
     void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
     {
-		// Create page control as ModalDialogPage
+        // Create page control as ModalDialogPage
         auto modalDialogPage = make<ModalDialogPage>();
 
         // Create `ContentDialog` with Page
