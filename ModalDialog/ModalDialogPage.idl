@@ -1,0 +1,12 @@
+// Copyright (c) Microsoft Corporation and Contributors.
+// Licensed under the MIT License.
+
+namespace ModalDialog
+{
+    [default_interface]
+    runtimeclass ModalDialogPage : Microsoft.UI.Xaml.Controls.Page
+    {
+        ModalDialogPage();
+        Int32 MyProperty;
+    }
+}
