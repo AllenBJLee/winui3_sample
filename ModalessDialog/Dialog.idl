@@ -1,0 +1,12 @@
+// Copyright (c) Microsoft Corporation and Contributors.
+// Licensed under the MIT License.
+
+namespace ModalessDialog
+{
+    [default_interface]
+    runtimeclass Dialog : Microsoft.UI.Xaml.Window
+    {
+        Dialog();
+        Int32 MyProperty;
+    }
+}
