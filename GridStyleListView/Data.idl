@@ -1,0 +1,10 @@
+namespace GridStyleListView
+{
+    runtimeclass Data : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        Data(String name, String service);
+
+        String Name;
+        String Service;
+    }
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="GridStyleListView.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GridStyleListView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Width="320" Height="500" BorderBrush="LightGray" BorderThickness="1 1 1 1">
+            <ListView x:Name="myList" ItemsSource="{x:Bind GetData}" Margin="5">
+                <ListView.Template>
+                    <ControlTemplate>
+                        <Grid HorizontalAlignment="Left">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Width="300" VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.Resources>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Margin" Value="5,0" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="BorderBrush" Value="LightGray" />
+                                        <Setter Property="Background" Value="White" />
+                                    </Style>
+                                </Grid.Resources>
+                                <Border Grid.Column="0" BorderThickness="0 1 1 1">
+                                    <TextBlock>Name</TextBlock>
+                                </Border>
+                                <Border Grid.Column="1" BorderThickness="0 1 0 1">
+                                    <TextBlock>Service</TextBlock>
+                                </Border>
+                            </Grid>
+                            <ItemsPresenter Grid.Row="1"></ItemsPresenter>
+                        </Grid>
+                    </ControlTemplate>
+                </ListView.Template>
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Data">
+                        <Grid Width="300" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{x:Bind Path=Name, Mode=OneWay}"/>
+                            <TextBlock Grid.Column="1" Text="{x:Bind Path=Service, Mode=OneWay}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>

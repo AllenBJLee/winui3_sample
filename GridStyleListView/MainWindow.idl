@@ -1,0 +1,15 @@
+// Copyright (c) Microsoft Corporation and Contributors.
+// Licensed under the MIT License.
+import "Data.idl";
+
+namespace GridStyleListView
+{
+    [default_interface]
+    runtimeclass MainWindow : Microsoft.UI.Xaml.Window
+    {
+        MainWindow();
+        Int32 MyProperty;
+
+        Windows.Foundation.Collections.IObservableVector<Data> GetData{ get; };
+    }
+}
