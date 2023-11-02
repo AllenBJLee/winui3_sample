@@ -1,10 +1,13 @@
+# 스크린샷
+![grid style list view](../sample_image/grid_style_list_view.png)
+
 # DataBind 를 위한 .idl, .h .cpp 파일을 추가
  - Data.idl
  - Data.h
  - Data.cpp
 
-Data.idl 은 platform xaml 에서 사용할 수 있는 MIDL 이며 ListView 와 소스코드의 바인드를 위한 중간 단계 역할을 합니다.
-Data.idl 은 데이터 변화를 알려줄 수 있는 Microsoft.UI.Xaml.Data.INotifyPropertyChanged 을 상속받아야 합니다.
+Data.idl 은 platform xaml 에서 사용할 수 있는 MIDL 이며 ListView 와 소스코드의 바인드를 위한 중간 단계 역할을 합니다.<br>
+Data.idl 은 데이터 변화를 알려줄 수 있는 Microsoft.UI.Xaml.Data.INotifyPropertyChanged 을 상속받아야 합니다.<br>
 세 파일을 참고해 Data 형태를 파악하고 구현합니다.
 
 # ListView 에서 사용할 데이터를 획득할 수 있는 멤버 변수를 추가
