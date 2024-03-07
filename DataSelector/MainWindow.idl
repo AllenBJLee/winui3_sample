@@ -1,0 +1,13 @@
+import "MyTemplateSelector.idl";
+
+namespace DataSelector
+{
+    [default_interface]
+    runtimeclass MainWindow : Microsoft.UI.Xaml.Window
+    {
+        MainWindow();
+        Int32 MyProperty;
+
+        Windows.Foundation.Collections.IObservableVector<Int32> NumbersList{ get; };
+    }
+}

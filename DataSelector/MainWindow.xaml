@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="DataSelector.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataSelector"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page>
+        <Page.Resources>
+
+            <DataTemplate x:Key="NormalItemTemplate" x:DataType="x:Int32">
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemChromeLowColor}">
+                    <TextBlock Text="{x:Bind}" />
+                </Button>
+            </DataTemplate>
+
+            <DataTemplate x:Key="AccentItemTemplate" x:DataType="x:Int32">
+                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{ThemeResource SystemAccentColor}">
+                    <TextBlock Text="{x:Bind}" />
+                </Button>
+            </DataTemplate>
+
+            <!-- <local:MyTemplateSelector x:Key="MyDataTemplateSelector"/> -->
+
+            <local:MyTemplateSelector x:Key="MyDataTemplateSelector" Normal="{StaticResource NormalItemTemplate}" Accent="{StaticResource AccentItemTemplate}"/>
+
+        </Page.Resources>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ListView x:Name = "TestListView" ItemsSource = "{x:Bind NumbersList}" ItemTemplateSelector = "{StaticResource MyDataTemplateSelector}" />
+        </StackPanel>
+    </Page>
+    
+</Window>

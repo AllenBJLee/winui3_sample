@@ -1,0 +1,10 @@
+namespace DataSelector
+{
+    [default_interface]
+    runtimeclass MyTemplateSelector : Microsoft.UI.Xaml.Controls.DataTemplateSelector {
+        MyTemplateSelector();
+
+        Microsoft.UI.Xaml.DataTemplate Normal;
+        Microsoft.UI.Xaml.DataTemplate Accent;
+    }
+}
